@@ -39,8 +39,16 @@
             cursor: pointer;
             animation: gradientAnimation 3s ease infinite; /* Continuous gradient animation */
             transition: box-shadow 0.3s; /* Smooth transition for shadow */
+            margin-bottom: 1rem; /* Space between buttons */
         }
         .button:hover {
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
+        }
+        .button.discord {
+            background: #7289da; /* Discord blue */
+            background-size: 200% 200%; /* Double the size for smooth animation */
+        }
+        .button.discord:hover {
             box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
         }
         @keyframes gradientAnimation {
@@ -63,6 +71,7 @@
     <div class="container">
         <h1>The site is still being developed by Thavipah...</h1>
         <a href="downloads.html" class="button">Go to Downloads</a>
+        <a href="https://discord.com/invite/pulsefn" class="button discord">Join Discord</a>
     </div>
     <!-- Audio player -->
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
