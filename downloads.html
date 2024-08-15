@@ -44,7 +44,7 @@
             display: inline-block;
             padding: 18.15px 36.3px; /* Increase padding by 10% */
             font-size: 1.45rem; /* Increase button text size by 10% */
-            color: #fff;
+            color: #fff; /* Keep text color white */
             background: linear-gradient(45deg, #00c6ff, #0072ff); /* Blue gradient */
             background-size: 200% 200%; /* Double the size for smooth animation */
             border: none;
@@ -52,11 +52,10 @@
             text-decoration: none;
             cursor: pointer;
             animation: gradientAnimation 3s ease infinite; /* Continuous gradient animation */
-            transition: color 0.3s, box-shadow 0.3s; /* Smooth transition for color and shadow */
+            transition: box-shadow 0.3s; /* Smooth transition for shadow */
         }
         .button:hover {
-            color: #000; /* Change text color on hover if needed */
-            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); /* White glow effect */
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
         }
         .image {
             max-width: 60.5%; /* Increase image size by another 10% */
