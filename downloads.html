@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Launcher</title>
+    <link rel="icon" type="image/png" href="favicon.ico"> <!-- Favicon link -->
     <style>
         body {
             margin: 0;
@@ -16,10 +17,17 @@
             height: 100vh;
         }
         .container {
+            display: flex; /* Use flexbox to align items */
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            max-width: 600px;
+            max-width: 800px; /* Adjust width as needed */
             margin: 0 auto;
             padding: 20px;
+        }
+        .text-content {
+            max-width: 50%;
+            margin-right: 20px; /* Space between text and image */
         }
         h1 {
             font-size: 3rem; /* Large title */
@@ -46,14 +54,21 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Start Your Journey<br>and Have Fun!</h1>
-        <p>Download our FREE Project Pulse Launcher now for an enhanced gaming experience and join our vibrant community.</p>
-        <!-- Button to download the launcher -->
-        <a href="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/Project%20Pulse%20Setup.msi" class="button">Download Launcher</a>
+        <div class="text-content">
+            <h1>Start Your Journey<br>and Have Fun!</h1>
+            <p>Download our FREE Project Pulse Launcher now for an enhanced gaming experience and join our vibrant community.</p>
+            <!-- Button to download the launcher -->
+            <a href="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/Project%20Pulse%20Setup.msi" class="button">Download Launcher</a>
+        </div>
+        <img src="example-image.png" alt="Promotional Image" class="image">
     </div>
 </body>
 </html>
