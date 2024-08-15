@@ -49,6 +49,14 @@
         <a href="downloads.html" class="button">Go to Downloads</a>
     </div>
     <!-- Audio player -->
-    <audio src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
+    <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-audio');
+            audio.play().catch(function(error) {
+                console.log('Playback failed:', error);
+            });
+        });
+    </script>
 </body>
 </html>
