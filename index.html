@@ -22,14 +22,20 @@
             position: relative;
             z-index: 1;
         }
-        h1 {
-            font-size: 2rem; /* Larger font size */
+        h1.main-title {
+            font-size: 5rem; /* Very large font size for "Project Pulse" */
+            color: #fff; /* White color for the main title */
+            margin-bottom: 0.5rem;
+        }
+        h2.sub-title {
+            font-size: 3.75rem; /* 75% the size of the main title */
+            color: #b0b0b0; /* Grey color for the subtitle */
             margin-bottom: 1.5rem;
         }
         .button {
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 12px 24px; /* 20% smaller padding */
+            font-size: 0.96rem; /* 20% smaller font size */
             color: #fff; /* Keep text color white */
             background: linear-gradient(45deg, #00c6ff, #0072ff); /* Blue gradient */
             background-size: 200% 200%; /* Double the size for smooth animation */
@@ -41,7 +47,7 @@
             transition: box-shadow 0.3s; /* Smooth transition for shadow */
         }
         .button:hover {
-            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
+            box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
         }
         @keyframes gradientAnimation {
             0% {
@@ -58,8 +64,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Pulse</h1>
-        <a href="home.html" class="button">Play Pulse Now</a>
+        <h1 class="main-title">Project Pulse</h1>
+        <h2 class="sub-title">Become The Best</h2>
+        <a href="home.html" class="button">Download</a>
     </div>
     <!-- Audio player -->
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
