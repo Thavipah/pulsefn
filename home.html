@@ -37,11 +37,23 @@
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            transition: background-position 0.5s, color 0.3s;
+            animation: gradientAnimation 3s ease infinite; /* Continuous gradient animation */
+            transition: color 0.3s, box-shadow 0.3s; /* Smooth transition for color and shadow */
         }
         .button:hover {
-            background-position: 100% 0; /* Move the gradient on hover */
             color: #000; /* Change text color on hover if needed */
+            box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); /* White glow effect */
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
         }
         audio {
             display: none; /* Hide the audio player controls */
