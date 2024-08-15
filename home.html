@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Launcher</title>
+    <title>Site Under Development</title>
     <link rel="icon" type="image/png" href="favicon.ico"> <!-- Favicon link -->
     <style>
         body {
@@ -18,32 +18,18 @@
             overflow: hidden; /* Hide scrollbars */
         }
         .container {
-            display: flex; /* Use flexbox to align items */
-            justify-content: space-between; /* Space between text and image */
-            align-items: center;
-            max-width: 900px; /* Increased max-width to accommodate larger elements */
-            margin: 0 auto;
-            padding: 20px;
+            text-align: center;
             position: relative;
-            z-index: 1;
-        }
-        .text-content {
-            max-width: 50%;
+            z-index: 1; /* Ensure content is above particles */
         }
         h1 {
-            font-size: 3.63rem; /* Increase title size by 10% */
-            color: #ffffff; /* White color for the title */
-            margin-bottom: 1.21rem; /* Increase margin for larger title */
-        }
-        p {
-            font-size: 1.45rem; /* Increase text size by 10% */
-            color: #b0b0b0; /* Grey color */
-            margin-bottom: 2.42rem; /* Increase margin for larger text */
+            font-size: 1.65rem; /* Slightly larger font size */
+            margin-bottom: 1.2rem;
         }
         .button {
             display: inline-block;
-            padding: 18.15px 36.3px; /* Increase padding by 10% */
-            font-size: 1.45rem; /* Increase button text size by 10% */
+            padding: 11px 22px; /* Slightly larger padding */
+            font-size: 1.1rem; /* Slightly larger font size */
             color: #fff;
             background-color: #007bff;
             border: none;
@@ -55,41 +41,39 @@
         .button:hover {
             background-color: #0056b3;
         }
-        .image {
-            max-width: 60.5%; /* Increase image size by another 10% */
-            height: auto;
-        }
         #particles-js {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0;
+            z-index: 0; /* Ensure particles are behind content */
+        }
+        audio {
+            display: none; /* Hide the audio player controls */
         }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
     <div class="container">
-        <div class="text-content">
-            <h1>Start Your Journey<br>and Have Fun!</h1>
-            <p>Download our FREE Project Pulse Launcher now for an enhanced gaming experience and join our vibrant community.</p>
-            <!-- Button to download the launcher -->
-            <a href="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/Project%20Pulse%20Setup.msi" class="button">Download Launcher</a>
-        </div>
-        <img src="example-image.png" alt="Promotional Image" class="image">
+        <h1>The site is still being developed by Thavipah...</h1>
+        <a href="downloads.html" class="button">Go to Downloads</a>
     </div>
+    <!-- Audio player -->
+    <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
+
+    <!-- Particles.js script -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles-js', {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#8a2be2" },
+                color: { value: "#00f" }, /* Blue particles */
                 shape: { type: "circle" },
                 opacity: { value: 0.5, random: false },
                 size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#8a2be2", opacity: 0.4, width: 1 },
+                line_linked: { enable: true, distance: 150, color: "#00f", opacity: 0.4, width: 1 },
                 move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
             },
             interactivity: {
