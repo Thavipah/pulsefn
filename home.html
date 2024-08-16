@@ -21,7 +21,8 @@
 
         .main-container {
             text-align: center;
-            margin-top: 160px; /* Move content 200px down + 50px for initial margin */
+            margin-top: 160px; /* Move content 160px down */
+            animation: slideInTop 1s ease-out forwards; /* Slide in animation */
         }
 
         .main-heading {
@@ -77,24 +78,32 @@
             }
         }
 
-        audio {
-            display: none;
+        @keyframes slideInTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        @media (min-width: 768px) {
-            .main-heading {
-                font-size: 3rem; /* Larger font size for larger screens */
+        @keyframes fadeInBottom {
+            from {
+                transform: translateY(50%);
+                opacity: 0;
             }
-
-            .button {
-                padding: 12px 24px;
-                font-size: 1.1rem;
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
         .item-shop-container {
             margin-top: 200px; /* Add spacing below main content */
             text-align: center;
+            animation: fadeInBottom 1s ease-out forwards; /* Fade in animation */
         }
 
         .item-shop-container img {
