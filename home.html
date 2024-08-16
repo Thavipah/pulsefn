@@ -12,15 +12,16 @@
             background-color: #121212;
             color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow-y: auto; /* Enable vertical scrolling */
             text-align: center;
         }
 
         .main-container {
             text-align: center;
+            margin-top: 50px; /* Add some top margin */
         }
 
         .main-heading {
@@ -92,7 +93,7 @@
         }
 
         .item-shop-container {
-            margin-top: 200px; /* Added space between main content and item shop */
+            margin-top: 200px; /* Add spacing below main content */
             text-align: center;
         }
 
