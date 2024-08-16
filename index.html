@@ -19,35 +19,24 @@
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
             text-align: center;
+            position: relative;
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: #ffffff;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            line-height: 1.2;
         }
 
         p {
-            font-size: 1.25rem;
-            color: #b0b0b0;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
 
         .button {
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.25rem;
+            padding: 10px 20px;
+            font-size: 1rem;
             color: #fff;
             background: linear-gradient(45deg, #00c6ff, #0072ff);
             background-size: 200% 200%;
@@ -57,7 +46,6 @@
             cursor: pointer;
             animation: gradientAnimation 3s ease infinite;
             transition: box-shadow 0.3s;
-            margin-bottom: 10px;
         }
 
         .button:hover {
@@ -82,63 +70,22 @@
             }
         }
 
-        /* Responsive design */
-        @media (min-width: 576px) {
-            h1 {
-                font-size: 3rem;
-            }
-            p {
-                font-size: 1.5rem;
-            }
-            .button {
-                padding: 17px 34px;
-                font-size: 1.35rem;
-            }
-        }
-
         @media (min-width: 768px) {
             .container {
+                display: flex;
                 flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
                 text-align: left;
             }
-            h1 {
-                font-size: 3.5rem;
+
+            .text-content {
+                max-width: 50%;
             }
-            p {
-                font-size: 1.75rem;
-            }
-            .button {
-                padding: 18px 36px;
-                font-size: 1.45rem;
-            }
+
             .image {
+                max-width: 40%;
                 margin-top: 0;
-            }
-        }
-
-        @media (min-width: 992px) {
-            h1 {
-                font-size: 4rem;
-            }
-            p {
-                font-size: 2rem;
-            }
-            .button {
-                padding: 20px 40px;
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            h1 {
-                font-size: 4.5rem;
-            }
-            p {
-                font-size: 2.25rem;
-            }
-            .button {
-                padding: 22px 44px;
-                font-size: 1.75rem;
             }
         }
     </style>
