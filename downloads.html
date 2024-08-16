@@ -14,16 +14,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             min-height: 100vh;
-            overflow: auto;
+            overflow-y: auto; /* Enable vertical scrolling */
         }
 
         .container {
             text-align: center;
             position: relative;
             padding-left: 100px; /* Move text 100px to the left */
-            margin-top: 160px; /* Adjusted to move content down appropriately */
+            margin-top: 160px; /* Move content down */
         }
 
         h1 {
@@ -74,6 +73,27 @@
             }
         }
 
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+                filter: blur(4px); /* Motion blur effect */
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .slide-in {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .motion-blur {
+            filter: blur(2px); /* Motion blur effect */
+        }
+
         @media (min-width: 768px) {
             .container {
                 display: flex;
@@ -82,6 +102,7 @@
                 align-items: center;
                 text-align: left;
                 padding-left: 0; /* Reset padding on larger screens */
+                margin-top: 200px; /* Move content down */
             }
 
             .text-content {
@@ -95,19 +116,18 @@
             }
         }
 
+        /* Footer styles */
         footer {
-            background: #1e1e1e; /* Dark background color for footer */
+            background: #1e1e1e;
             padding: 2rem 0;
             text-align: center;
-            width: 100%;
-            margin-top: 100px; /* Add space above footer */
+            margin-top: 2rem;
         }
 
         .footer-content {
             display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .footer-section {
@@ -116,22 +136,17 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #ffffff; /* White color for heading */
-        }
-
-        .footer-section p {
-            color: #cccccc; /* Light grey color for text */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text-content">
+        <div class="text-content slide-in">
             <h1>Start Your Journey<br>and Have Fun!</h1>
             <p>Download our FREE Project Pulse Launcher now for an enhanced gaming experience and join our vibrant community.</p>
             <a href="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/Project%20Pulse%20Setup.msi" class="button">Download Launcher</a>
         </div>
-        <img src="example-image.png" alt="Promotional Image" class="image">
+        <img src="example-image.png" alt="Promotional Image" class="image slide-in motion-blur">
     </div>
 
     <!-- Footer -->
