@@ -9,48 +9,54 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark grey to black gradient */
+            background-color: #121212;
             color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Hide scrollbars */
+            overflow: hidden;
         }
+
         .container {
             text-align: center;
             position: relative;
-            z-index: 1; /* Ensure content is above particles */
         }
+
         h1 {
-            font-size: 1.65rem; /* Slightly larger font size */
+            font-size: 1.65rem;
             margin-bottom: 1.2rem;
         }
+
         .button {
             display: inline-block;
-            padding: 11px 22px; /* Slightly larger padding */
-            font-size: 1.1rem; /* Slightly larger font size */
-            color: #fff; /* Keep text color white */
-            background: linear-gradient(45deg, #00c6ff, #0072ff); /* Blue gradient */
-            background-size: 200% 200%; /* Double the size for smooth animation */
+            padding: 11px 22px;
+            font-size: 1.1rem;
+            color: #fff;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            background-size: 200% 200%;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            animation: gradientAnimation 3s ease infinite; /* Continuous gradient animation */
-            transition: box-shadow 0.3s; /* Smooth transition for shadow */
-            margin-bottom: 1rem; /* Space between buttons */
+            animation: gradientAnimation 3s ease infinite;
+            transition: box-shadow 0.3s;
+            margin-bottom: 1rem;
         }
+
         .button:hover {
-            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
         }
+
         .button.discord {
-            background: #7289da; /* Discord blue */
-            background-size: 200% 200%; /* Double the size for smooth animation */
+            background: #7289da;
+            background-size: 200% 200%;
         }
+
         .button.discord:hover {
-            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
         }
+
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 0%;
@@ -62,8 +68,50 @@
                 background-position: 0% 0%;
             }
         }
+
         audio {
-            display: none; /* Hide the audio player controls */
+            display: none;
+        }
+
+        /* Responsive design */
+        @media (min-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .button {
+                padding: 12px 24px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .button {
+                padding: 14px 28px;
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .button {
+                padding: 16px 32px;
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            .button {
+                padding: 18px 36px;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -73,7 +121,6 @@
         <a href="downloads.html" class="button">Go to Downloads</a>
         <a href="https://discord.com/invite/pulsefn" class="button discord">Join Discord</a>
     </div>
-    <!-- Audio player -->
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
 </body>
 </html>
