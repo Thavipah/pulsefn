@@ -85,7 +85,7 @@
         }
 
         .item-shop-container {
-            margin-top: 100px;
+            margin-top: 50px; /* Adjusted for better spacing */
             text-align: center;
         }
 
@@ -93,14 +93,20 @@
             width: 100%;
             max-width: 800px;
             height: auto;
-            border: 2px solid #fff;
-            border-radius: 10px;
+            border: none; /* Removed border */
+            border-radius: 0; /* Removed border-radius */
         }
 
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 10px;
             font-weight: bold;
+            color: #ffffff; /* White color for title */
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #cccccc; /* Light grey color for description */
         }
     </style>
 </head>
@@ -112,8 +118,9 @@
         
         <!-- Item Shop Section -->
         <div class="item-shop-container">
-            <div class="section-title">Our Item Shop Today</div>
+            <div class="section-title">The Item Shop</div>
             <img src="https://raw.githubusercontent.com/Thavipah/pulsefn/main/images/itemshop.png" alt="Item Shop">
+            <div class="section-description">This is our current Item Shop that updates every 24 hours.</div>
         </div>
     </div>
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
