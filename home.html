@@ -116,6 +116,45 @@
             font-size: 1.1rem;
             color: #cccccc; /* Light grey color for description */
         }
+
+        footer {
+            background: #1e1e1e; /* Dark background color for footer */
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 200px; /* Add space above footer */
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-section {
+            margin: 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffffff; /* White color for heading */
+        }
+
+        .footer-section p {
+            color: #cccccc; /* Light grey color for text */
+        }
+
+        .social-icons a {
+            color: #00c6ff; /* Gradient color for social links */
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .social-icons a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +176,23 @@
         <img src="https://raw.githubusercontent.com/Thavipah/pulsefn/main/images/itemshop.png" alt="Item Shop">
         <div class="section-description">This is our current Item Shop that updates every 24 hours.</div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <div class="social-icons">
+                    <a href="https://discord.gg/saturniv" target="_blank">Discord</a>
+                    <a href="https://github.com/paysonism" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Project Pulse</h3>
+                <p>&copy; 2024 Project Pulse. Made By Thavipah.</p>
+            </div>
+        </div>
+    </footer>
 
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
 </body>
