@@ -21,11 +21,19 @@
 
         .container {
             position: relative;
+            padding: 20px;
         }
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .main-heading {
+            font-size: 2.5rem; /* Large font size for the main heading */
+            margin-bottom: 20px;
+            color: #ffffff; /* White color for heading */
+        }
+
+        .subheading {
+            font-size: 1.2rem; /* Slightly larger font size for subheading */
+            margin-bottom: 20px;
+            color: #cccccc; /* Light grey color for subheading */
         }
 
         .button {
@@ -74,8 +82,8 @@
         }
 
         @media (min-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .main-heading {
+                font-size: 3rem; /* Larger font size for larger screens */
             }
 
             .button {
@@ -112,13 +120,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>The site is still being developed by Thavipah...</h1>
+        <!-- Main Heading and Subheading -->
+        <div class="main-heading">The OG Fortnite</div>
+        <div class="subheading">
+            Our goal is to provide the best OG Fortnite experience to our players! If you are interested in playing, download our launcher or join the Discord with the buttons below!
+        </div>
+        
+        <!-- Buttons -->
         <a href="downloads.html" class="button">Go to Downloads</a>
         <a href="https://discord.com/invite/pulsefn" class="button discord">Join Discord</a>
         
         <!-- Item Shop Section -->
         <div class="item-shop-container">
-            <div class="section-title">The Item Shop</div>
+            <div class="section-title">Item Shop</div>
             <img src="https://raw.githubusercontent.com/Thavipah/pulsefn/main/images/itemshop.png" alt="Item Shop">
             <div class="section-description">This is our current Item Shop that updates every 24 hours.</div>
         </div>
