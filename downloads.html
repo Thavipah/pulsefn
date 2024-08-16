@@ -9,67 +9,134 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212; /* Dark grey to black gradient */
+            background-color: #121212;
             color: #f0f0f0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; /* Hide scrollbars */
+            overflow: hidden;
         }
+
         .container {
-            display: flex; /* Use flexbox to align items */
-            justify-content: space-between; /* Space between text and image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            max-width: 983px; /* Decreased max-width by 5% */
+            max-width: 90%;
             margin: 0 auto;
-            padding: 21.85px; /* Decreased padding by 5% */
+            padding: 20px;
             position: relative;
-            z-index: 1;
+            text-align: center;
         }
-        .text-content {
-            max-width: 54.6%; /* Decreased max-width by 5% */
-        }
+
         h1 {
-            font-size: 3.96rem; /* Decreased title size by 5% */
-            color: #ffffff; /* White color for the title */
-            margin-bottom: 1.32rem; /* Decreased margin for smaller title */
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
         }
+
         p {
-            font-size: 1.59rem; /* Decreased text size by 5% */
-            color: #b0b0b0; /* Grey color */
-            margin-bottom: 2.65rem; /* Decreased margin for smaller text */
+            font-size: 1.25rem;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
         }
+
         .button {
             display: inline-block;
-            padding: 19.85px 39.6px; /* Decreased padding by 5% */
-            font-size: 1.59rem; /* Decreased button text size by 5% */
-            color: #fff; /* Keep text color white */
-            background: linear-gradient(45deg, #00c6ff, #0072ff); /* Blue gradient */
-            background-size: 218.5% 218.5%; /* Decreased size for smoother animation */
+            padding: 15px 30px;
+            font-size: 1.25rem;
+            color: #fff;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            background-size: 200% 200%;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
-            animation: gradientAnimation 3s ease infinite; /* Continuous gradient animation */
-            transition: box-shadow 0.3s; /* Smooth transition for shadow */
+            animation: gradientAnimation 3s ease infinite;
+            transition: box-shadow 0.3s;
+            margin-bottom: 10px;
         }
+
         .button:hover {
-            box-shadow: 0 0 10.93px 3.28px rgba(255, 255, 255, 0.5); /* Subtle white glow effect */
+            box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
         }
+
         .image {
-            max-width: 66.02%; /* Decreased image size by 5% */
+            max-width: 100%;
             height: auto;
+            margin-top: 20px;
         }
+
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 0%;
             }
             50% {
-                background-position: 109.25% 109.25%;
+                background-position: 100% 100%;
             }
             100% {
                 background-position: 0% 0%;
+            }
+        }
+
+        /* Responsive design */
+        @media (min-width: 576px) {
+            h1 {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+            .button {
+                padding: 17px 34px;
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                text-align: left;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            p {
+                font-size: 1.75rem;
+            }
+            .button {
+                padding: 18px 36px;
+                font-size: 1.45rem;
+            }
+            .image {
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 4rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+            .button {
+                padding: 20px 40px;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 4.5rem;
+            }
+            p {
+                font-size: 2.25rem;
+            }
+            .button {
+                padding: 22px 44px;
+                font-size: 1.75rem;
             }
         }
     </style>
@@ -79,12 +146,10 @@
         <div class="text-content">
             <h1>Start Your Journey<br>and Have Fun!</h1>
             <p>Download our FREE Project Pulse Launcher now for an enhanced gaming experience and join our vibrant community.</p>
-            <!-- Button to download the launcher -->
             <a href="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/Project%20Pulse%20Setup.msi" class="button">Download Launcher</a>
         </div>
         <img src="example-image.png" alt="Promotional Image" class="image">
     </div>
-    <!-- Audio player -->
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
 </body>
 </html>
