@@ -73,6 +73,19 @@
             }
         }
 
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+                filter: blur(4px); /* Motion blur effect */
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
         @keyframes slideInRight {
             from {
                 transform: translateX(100%);
@@ -86,12 +99,12 @@
             }
         }
 
-        .slide-in {
-            animation: slideInRight 1s ease-out forwards; /* Retain final state of animation */
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out forwards; /* Retain final state of animation */
         }
 
-        .motion-blur {
-            filter: blur(2px); /* Motion blur effect */
+        .slide-in-right {
+            animation: slideInRight 1s ease-out forwards; /* Retain final state of animation */
         }
 
         @media (min-width: 768px) {
@@ -143,12 +156,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="text-content slide-in">
+        <div class="text-content slide-in-left">
             <h1>Enjoy your unique Fortnite experience</h1>
             <p>Pulse is a Chapter 2 Fortnite Server that is currently hosting Chapter 2 Season 5!</p>
             <a href="home.html" class="button">Play Pulse!</a>
         </div>
-        <img src="mogul.png" alt="Promotional Image" class="image slide-in motion-blur">
+        <img src="mogul.png" alt="Promotional Image" class="image slide-in-right">
     </div>
 
     <!-- Footer -->
