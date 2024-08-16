@@ -16,10 +16,10 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
             position: relative;
         }
 
@@ -41,7 +41,7 @@
             cursor: pointer;
             animation: gradientAnimation 3s ease infinite;
             transition: box-shadow 0.3s;
-            margin-bottom: 10px;
+            margin: 10px;
         }
 
         .button:hover {
@@ -83,6 +83,25 @@
                 font-size: 1.1rem;
             }
         }
+
+        .item-shop-container {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .item-shop-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #fff;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +109,12 @@
         <h1>The site is still being developed by Thavipah...</h1>
         <a href="downloads.html" class="button">Go to Downloads</a>
         <a href="https://discord.com/invite/pulsefn" class="button discord">Join Discord</a>
+        
+        <!-- Item Shop Section -->
+        <div class="item-shop-container">
+            <div class="section-title">Our Item Shop Today</div>
+            <img src="https://raw.githubusercontent.com/Thavipah/sigma/main/uploads/itemshop.png" alt="Item Shop">
+        </div>
     </div>
     <audio id="background-audio" src="https://media.fortniteapi.io/audio/musicpacks/musicpack_023_og.mp3" autoplay loop></audio>
 </body>
