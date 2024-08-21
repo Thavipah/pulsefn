@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - PulseFN</title>
+    <title>Project Pulse</title>
     <link rel="icon" type="image/png" href="favicon.ico">
     <style>
+        /* Embed custom font */
+        @font-face {
+            font-family: 'Burbank Big Condensed Black';
+            src: url('https://raw.githubusercontent.com/natevfx32/sigma/main/uploads/Burbank-Big-Condensed-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Burbank Big Condensed Black', Arial, sans-serif;
             background-color: #121212;
             color: #f0f0f0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow-y: auto;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .main-container {
@@ -22,23 +31,27 @@
             text-align: center;
             position: relative;
             flex: 1;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .main-heading {
             font-size: 2.5rem;
             margin-bottom: 10px;
             font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .subheading {
             font-size: 1.2rem;
             margin-bottom: 20px;
             color: #cccccc;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .form-group {
             margin-bottom: 15px;
             position: relative;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .form-group label {
@@ -56,6 +69,12 @@
             border-radius: 5px;
             background-color: #1e1e1e;
             color: #f0f0f0;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            transform: scale(1.02);
         }
 
         .form-group .visibility-icon {
@@ -80,16 +99,19 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s, transform 0.2s;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .button:hover {
             box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+            transform: scale(1.05);
         }
 
         .message {
             margin-top: 20px;
             font-size: 1.2rem;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .loading {
@@ -97,6 +119,7 @@
             margin-top: 20px;
             font-size: 1.2rem;
             color: #cccccc;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .loading.show {
@@ -111,6 +134,7 @@
             width: 100%;
             position: relative;
             margin-top: auto;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .footer-content {
@@ -118,11 +142,21 @@
             font-size: 1rem;
             font-weight: bold;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <div class="main-heading">Register for PulseFN</div>
+        <div class="main-heading">Project Pulse</div>
         <div class="subheading">Create your account to start playing!</div>
         <form id="registerForm">
             <div class="form-group">
