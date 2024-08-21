@@ -68,6 +68,15 @@
             margin-top: 20px;
             font-size: 1.2rem;
         }
+        .loading {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+        .loading.show {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -77,23 +86,24 @@
         <form id="registerForm">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required aria-required="true">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required aria-required="true">
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required aria-required="true">
             </div>
             <div class="form-group">
                 <label for="discordId">Discord ID</label>
-                <input type="text" id="discordId" name="discordId" required>
+                <input type="text" id="discordId" name="discordId" required aria-required="true">
             </div>
             <button type="submit" class="button">Register</button>
         </form>
-        <div class="message" id="message"></div>
+        <div class="loading" id="loading">Registering...</div>
+        <div class="message" id="message" aria-live="polite"></div>
     </div>
 
     <script>
@@ -105,6 +115,9 @@
             const password = document.getElementById('password').value;
             const discordId = document.getElementById('discordId').value;
             const messageElement = document.getElementById('message');
+            const loadingElement = document.getElementById('loading');
+
+            loadingElement.classList.add('show');
 
             try {
                 const response = await fetch('http://45.143.196.234:3551/register', {
@@ -132,6 +145,8 @@
                 console.error('Fetch error:', error);
                 messageElement.textContent = 'There was an error with your registration.';
                 messageElement.style.color = 'red';
+            } finally {
+                loadingElement.classList.remove('show');
             }
         });
     </script>
