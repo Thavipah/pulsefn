@@ -13,33 +13,40 @@
             color: #f0f0f0;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
             overflow-y: auto;
-            text-align: center;
         }
+
         .main-container {
             margin-top: 160px;
-            animation: slideInTop 1s ease-out forwards;
+            text-align: center;
+            position: relative;
+            flex: 1;
         }
+
         .main-heading {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #ffffff;
+            font-weight: bold;
         }
+
         .subheading {
             font-size: 1.2rem;
             margin-bottom: 20px;
             color: #cccccc;
         }
+
         .form-group {
             margin-bottom: 15px;
+            position: relative;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
             color: #cccccc;
         }
+
         .form-group input {
             padding: 10px;
             font-size: 1rem;
@@ -50,43 +57,66 @@
             background-color: #1e1e1e;
             color: #f0f0f0;
         }
+
         .form-group .visibility-icon {
             position: absolute;
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #cccccc;
+            width: 20px;
+            height: 20px;
+            background: url('https://raw.githubusercontent.com/natevfx32/sigma/main/uploads/image_processing20210627-9645-6i05yk.png') no-repeat center center;
+            background-size: cover;
         }
-        .form-group input[type="checkbox"] {
-            margin-right: 10px;
-        }
+
         .button {
-            padding: 10px 20px;
-            font-size: 1rem;
+            display: inline-block;
+            padding: 12.5px 25px;
+            font-size: 1.25rem;
             color: #fff;
             background: linear-gradient(45deg, #00c6ff, #0072ff);
+            background-size: 200% 200%;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: box-shadow 0.3s;
-            margin-top: 10px;
         }
+
         .button:hover {
             box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
         }
+
         .message {
             margin-top: 20px;
             font-size: 1.2rem;
         }
+
         .loading {
             display: none;
             margin-top: 20px;
             font-size: 1.2rem;
             color: #cccccc;
         }
+
         .loading.show {
             display: block;
+        }
+
+        /* Footer styles */
+        footer {
+            background: #1e1e1e;
+            padding: 1rem 0;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -109,7 +139,7 @@
                 <label for="password">Password</label>
                 <div style="position: relative;">
                     <input type="password" id="password" name="password" required aria-required="true">
-                    <span id="togglePassword" class="visibility-icon">👁️</span>
+                    <span id="togglePassword" class="visibility-icon"></span>
                 </div>
             </div>
             <div class="form-group">
@@ -117,14 +147,17 @@
                 <input type="text" id="discordId" name="discordId" required aria-required="true">
                 <div id="discordIdError" class="message"></div>
             </div>
-            <div class="form-group">
-                <label><input type="checkbox" id="saveDetails"> Save my details for next time</label>
-            </div>
             <button type="submit" class="button">Register</button>
         </form>
         <div class="loading" id="loading">Registering...</div>
         <div class="message" id="message" aria-live="polite"></div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            Made By Thavipah - Owner Of Pulse
+        </div>
+    </footer>
 
     <script>
         document.getElementById('registerForm').addEventListener('submit', async function(e) {
@@ -134,7 +167,6 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const discordId = document.getElementById('discordId').value;
-            const saveDetails = document.getElementById('saveDetails').checked;
             const messageElement = document.getElementById('message');
             const loadingElement = document.getElementById('loading');
             const usernameError = document.getElementById('usernameError');
@@ -187,7 +219,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ username, email, password, discordId, saveDetails }),
+                    body: JSON.stringify({ username, email, password, discordId }),
                 });
 
                 if (registerResponse.ok) {
@@ -212,7 +244,6 @@
             const passwordField = document.getElementById('password');
             const type = passwordField.type === 'password' ? 'text' : 'password';
             passwordField.type = type;
-            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️'; // Toggle icon
         });
     </script>
 </body>
