@@ -50,6 +50,17 @@
             background-color: #1e1e1e;
             color: #f0f0f0;
         }
+        .form-group .visibility-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #cccccc;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
         .button {
             padding: 10px 20px;
             font-size: 1rem;
@@ -87,18 +98,27 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required aria-required="true">
+                <div id="usernameError" class="message"></div>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required aria-required="true">
+                <div id="emailError" class="message"></div>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required aria-required="true">
+                <div style="position: relative;">
+                    <input type="password" id="password" name="password" required aria-required="true">
+                    <span id="togglePassword" class="visibility-icon">👁️</span>
+                </div>
             </div>
             <div class="form-group">
                 <label for="discordId">Discord ID</label>
                 <input type="text" id="discordId" name="discordId" required aria-required="true">
+                <div id="discordIdError" class="message"></div>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="saveDetails"> Save my details for next time</label>
             </div>
             <button type="submit" class="button">Register</button>
         </form>
@@ -114,30 +134,68 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const discordId = document.getElementById('discordId').value;
+            const saveDetails = document.getElementById('saveDetails').checked;
             const messageElement = document.getElementById('message');
             const loadingElement = document.getElementById('loading');
+            const usernameError = document.getElementById('usernameError');
+            const emailError = document.getElementById('emailError');
+            const discordIdError = document.getElementById('discordIdError');
 
             loadingElement.classList.add('show');
 
             try {
-                const response = await fetch('https://fire-beautiful-thyme.glitch.me/', {
+                // Check if email, username, or discord ID are already used
+                const response = await fetch('https://fire-beautiful-thyme.glitch.me/check', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ username, email, password, discordId }),
+                    body: JSON.stringify({ username, email, discordId }),
                 });
 
-                console.log('Response status:', response.status); // Log response status
-                console.log('Response headers:', response.headers); // Log response headers
+                const checkResult = await response.json();
+                if (checkResult.usernameUsed) {
+                    usernameError.textContent = 'Username is already taken.';
+                    usernameError.style.color = 'red';
+                    loadingElement.classList.remove('show');
+                    return;
+                } else {
+                    usernameError.textContent = '';
+                }
 
-                if (response.ok) {
-                    const result = await response.json();
+                if (checkResult.emailUsed) {
+                    emailError.textContent = 'Email is already used.';
+                    emailError.style.color = 'red';
+                    loadingElement.classList.remove('show');
+                    return;
+                } else {
+                    emailError.textContent = '';
+                }
+
+                if (checkResult.discordIdUsed) {
+                    discordIdError.textContent = 'Discord ID is already used.';
+                    discordIdError.style.color = 'red';
+                    loadingElement.classList.remove('show');
+                    return;
+                } else {
+                    discordIdError.textContent = '';
+                }
+
+                // If no issues, proceed with registration
+                const registerResponse = await fetch('https://fire-beautiful-thyme.glitch.me/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, email, password, discordId, saveDetails }),
+                });
+
+                if (registerResponse.ok) {
+                    const result = await registerResponse.json();
                     messageElement.textContent = result.message;
                     messageElement.style.color = 'green';
                 } else {
-                    const error = await response.json();
-                    console.error('Error response:', error);
+                    const error = await registerResponse.json();
                     messageElement.textContent = error.error || 'An error occurred';
                     messageElement.style.color = 'red';
                 }
@@ -148,6 +206,13 @@
             } finally {
                 loadingElement.classList.remove('show');
             }
+        });
+
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️'; // Toggle icon
         });
     </script>
 </body>
